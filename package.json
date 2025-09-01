@@ -1,0 +1,24 @@
+{
+  "name": "js-fondamentals",
+  "version": "1.0.0",
+  "description": "Fondamentaux JS",
+  "main": "/dist/main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dacodemaniak/js-fondamentals.git"
+  },
+  "keywords": [
+    "JS",
+    "HTML",
+    "CSS"
+  ],
+  "author": "Aélion <jean-luc.aubert@aelion.fr>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dacodemaniak/js-fondamentals/issues"
+  },
+  "homepage": "https://github.com/dacodemaniak/js-fondamentals#readme"
+}
