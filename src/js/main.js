@@ -1,3 +1,5 @@
+import { TaskCollection } from "./tasks/task-collection"
+
 /**
  * displayTitle
  * @param void
@@ -14,5 +16,8 @@ const displayTitle = () => {
  */
 (() => {
     displayTitle()
+
+    // Instancie un objet de collecte des tâches
+    const taskRepository = new TaskCollection()
 })()
 
