@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;700&display=swap');
+@import "./variables.css";
 @import "./icon.css";
 @import "./toolbar.css";
 @import "./buttons.css";
@@ -19,4 +20,36 @@ body {
 }
 .button-bar button.btn {
     margin-right: .5em;
+}
+
+/**
+* Card design
+*/
+.card {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: .5em;
+    padding: .5em;
+    border: solid 1px var(--primary);
+    border-radius: .5em;
+    display: flex;
+    flex-direction: column;
+}
+
+.card .card-header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+}
+.card .card-header .card-selector {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card .card-content-container {
+    display: flex;
+    
+    flex-direction: column;
+    flex-grow: 1;
 }
