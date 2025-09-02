@@ -2,12 +2,41 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width: device-width;initial-scale:1.0;maximum-scale:1.0;user-scalable:no">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
 
         <title>Todolist</title>
 
         <script type="module" src="./js/main.js" defer></script>
+
+        <link href="./css/main.css" rel="stylesheet">
     </head>
 
-    <body></body>
+    <body>
+        <header>
+            <!-- Title goes here-->
+             <h1></h1>
+        </header>
+
+        <div class="toolbar secondary">
+            <div class="selector-bar">
+                <div class="selector">
+                    <input type="checkbox" name="select-deselect-all" disabled>
+                </div>
+                <div class="selector-indicator">
+                    <span class="selected">0</span> / <span class="all-items">0</span>
+                </div>
+            </div>
+            <div class="button-bar">
+                <button class="btn btn-rounded light" type="button">
+                    <i class="icon-plus"></i>
+                </button>
+                <button class="btn btn-rounded light" type="button" disabled>
+                    <i class="icon-arrow-up"></i>
+                </button>
+                <button class="btn btn-rounded danger" type="button" disabled>
+                    <i class="icon-bin2"></i>
+                </button>
+            </div>
+        </div>
+    </body>
 </html>

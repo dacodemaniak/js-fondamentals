@@ -1,0 +1,53 @@
+@import "./variables.css";
+
+:root {
+    --height: 2.8em;
+    --width: 2.8em;
+}
+
+.btn {
+    border: none;
+    background: transparent;
+}
+
+.btn-rounded {
+    width: var(--height);
+    width: var(--width);
+    border-radius: 50%;
+}
+
+.btn.primary {
+    background-color: var(--primary-hsl);
+    color: var(--primary-lighten);
+}
+.btn.primary[disabled] {
+    background-color: var(--primary-lighten);
+    color: var(--primary-darken);
+}
+
+.btn.secondary {
+    background-color: var(--secondary-hsl);
+    color: var(--secondary-lighten);    
+}
+.btn.secondary[disabled] {
+    background-color: var(--secondary-lighten);
+    color: var(--secondary-darken);
+}
+
+.btn.light {
+    background-color: var(--light-hsl);
+    color: var(--light-lighten);
+}
+.btn.light[disabled] {
+    background-color: var(--light-lighten);
+     color: var(--light-darken);
+}
+
+.btn.danger {
+    background-color: var(--danger-hsl);
+    color: var(--danger-lighten);
+}
+.btn.danger[disabled] {
+    background-color: var(--danger-lighten);
+     color: var(--danger-darken);
+}

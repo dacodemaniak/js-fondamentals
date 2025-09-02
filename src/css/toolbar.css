@@ -1,0 +1,30 @@
+@import "./variables.css";
+
+:root {
+    --height: 3em;
+}
+
+.toolbar {
+    display: flex;
+    width: 95%;
+    margin: 0 auto;
+    height: var(--height);
+    line-height: var(--height);
+    vertical-align: middle;
+    justify-content: space-between;
+}
+
+.toolbar.primary {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+.toolbar.secondary {
+    background-color: var(--secondary);
+    color: #fff;    
+}
+
+.toolbar.light {
+    background-color: var(--light);
+    color: #000;
+}

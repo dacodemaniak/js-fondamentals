@@ -1,0 +1,25 @@
+:root {
+    --primary: #023047;
+    --secondary: #219ebc;
+    --light: #8ecae6;
+    --warning: #ffb703;
+    --danger: #fb8500;
+
+    --primary-hsl: hsl(200, 95%, 14%);
+    --secondary-hsl: hsl(192, 70%, 43%);
+    --light-hsl: hsl(199, 64%, 73%);
+    --warning-hsl: hsl(43, 100%, 51%);
+    --danger-hsl: hsl(32, 100%, 49%);
+
+    --primary-lighten: hsl(200, 95%, 34%);
+    --secondary-lighten: hsl(192, 70%, 73%);
+    --light-lighten: hsl(199, 64%, 100%);
+    --warning-lighten: hsl(43, 100%, 81%);
+    --danger-ligthen: hsl(32, 100%, 79%);
+
+    --primary-darken: hsl(200, 95%, 0%);
+    --secondary-darken: hsl(192, 70%, 13%);
+    --light-darken: hsl(199, 64%, 43%);
+    --warning-darken: hsl(43, 100%, 21%);
+    --danger-darken: hsl(32, 100%, 19%);
+}

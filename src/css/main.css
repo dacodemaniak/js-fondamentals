@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Poppins:wght@300;400;700&display=swap');
+@import "./icon.css";
+@import "./toolbar.css";
+@import "./buttons.css";
+
+body {
+    font-family: "Libre Franklin";
+    font-weight: 400;
+    font-size: 1em;
+}
+
+.selector-bar {
+    display: flex;
+}
+
+.button-bar {
+    display: flex;
+    justify-content: flex-end;
+}
+.button-bar button.btn {
+    margin-right: .5em;
+}
