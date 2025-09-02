@@ -1,4 +1,5 @@
 import { TaskCollection } from "./tasks/task-collection"
+import { TasksToDom } from "./tasks/tasks-to-dom"
 
 /**
  * displayTitle
@@ -19,5 +20,7 @@ const displayTitle = () => {
 
     // Instancie un objet de collecte des tâches
     const taskRepository = new TaskCollection()
+    new TasksToDom(taskRepository)
+        .build()
 })()
 
