@@ -25,6 +25,12 @@
   },
   "homepage": "https://github.com/dacodemaniak/js-fondamentals#readme",
   "devDependencies": {
+    "jest": "^30.1.3",
     "vite": "^7.1.4"
+  },
+  "dependencies": {
+    "@babel/core": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "babel-jest": "^30.1.2"
   }
 }
