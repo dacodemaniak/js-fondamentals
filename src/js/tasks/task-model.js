@@ -31,7 +31,7 @@ export class TaskModel {
 
     set beginAt(date) {
         if (date instanceof Date) {
-            this.#beginAt = this.#beginAt
+            this.#beginAt = date
         } else {
             throw new Error(`A date must be given`)
         }
@@ -43,7 +43,7 @@ export class TaskModel {
 
     set endAt(date) {
         if (date instanceof Date) {
-            this.#endAt = this.#beginAt
+            this.#endAt = date
         } else {
             throw new Error(`A date must be given`)
         }
