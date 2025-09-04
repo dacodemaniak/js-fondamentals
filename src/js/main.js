@@ -1,3 +1,5 @@
+import { ButtonRegistry } from "./events/button-registry"
+import { OpenModal } from "./events/open-modal"
 import { TaskCollection } from "./tasks/task-collection"
 import { TasksToDom } from "./tasks/tasks-to-dom"
 
@@ -22,5 +24,7 @@ const displayTitle = () => {
     const taskRepository = new TaskCollection()
     new TasksToDom(taskRepository)
         .build()
+
+    const openModal = new OpenModal(new ButtonRegistry())
 })()
 
