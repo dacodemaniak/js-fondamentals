@@ -1,4 +1,5 @@
 import $ from 'jquery'
+import { TaskFormHandler } from '../tasks/task-form-handler'
 
 export class OpenModal {
     #button = null
@@ -12,16 +13,18 @@ export class OpenModal {
         background: 'hsla(192, 70%, 73%, .6)'
     }
 
+    #form = null
+
     constructor(buttonRegistry) {
         this.#button = buttonRegistry.getButton('plus')
         this.#placeEventListener()
+        this.#form = new TaskFormHandler()
     }
 
     #placeEventListener () {
         this.#button.addEventListener(
             'click',
             (event) => {
-                console.log('Icon plus was triggered')
                 this.#buildModal()
             } 
         )
@@ -104,7 +107,17 @@ export class OpenModal {
             outerModal.css(attribute, this.#outerCss[attribute])
         }
 
-        const innerModal = $('<div>', {id: 'inner-modal'})
+        const innerModal = $('<div>', {
+            id: 'inner-modal',
+            css: {
+                'position': 'absolute',
+                'top': '2.5em',
+                'height': '100vh',
+                'padding': '1em'
+            }
+        })
+        innerModal.append(this.#form.templateHandler.clone())
+        outerModal.append(innerModal)
 
         $('body').append(outerModal)
 

@@ -56,5 +56,30 @@
                 <div class="card-footer"></div>
             </div>
          </template>
+
+         <template id="form-template">
+            <form>
+                <fieldset title="Contenu">
+                    <div class="form-field">
+                        <input type="text" placeholder="Titre(*)..." name="title">
+                        <error class="error no-display"></error>
+                    </div>
+                    <div class="form-field">
+                        <textarea placeholder="Contenu(*)..." name="content"></textarea>
+                        <error class="error no-display"></error>
+                    </div>
+                </fieldset>
+                <fieldset title="Durée">
+                    <div class="form-field">
+                        <input type="datetime" placeholder="Du(*)..." name="beginAt">
+                        <error class="error no-display"></error>
+                    </div>
+                    <div class="form-field">
+                        <input type="datetime" placeholder="Au(*)..." name="endAt">
+                        <error class="error no-display"></error>
+                    </div>
+                </fieldset>
+            </form>
+         </template>
     </body>
 </html>

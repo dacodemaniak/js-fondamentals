@@ -1,0 +1,21 @@
+@import "./variables.css";
+
+form {
+    position: relative;
+    top: 50%;
+    background: var(--light-lighten);
+    height: 31.25em;
+    width: 100%;
+    padding: 2em;
+    transform: translateY(-50%);
+}
+
+form div.form-field {
+    height: 4em;
+}
+
+form div.form-field input, form div.form-field textarea {
+    border: none;
+    border-bottom: solid 2px var(--primary-hsl);
+    padding-bottom: 1em;
+}

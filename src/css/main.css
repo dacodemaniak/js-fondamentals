@@ -3,6 +3,7 @@
 @import "./icon.css";
 @import "./toolbar.css";
 @import "./buttons.css";
+@import "./form.css";
 
 body {
     font-family: "Libre Franklin";
