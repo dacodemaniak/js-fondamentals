@@ -64,16 +64,55 @@ export class TaskCollection extends Collection {
         throw new Error(`Item is not a TaskModel`)
     }
 
+    serializeAndPush(rawData) {
+        const model = new TaskModel()
+
+        model.id = this.#getNextId()
+        model.title = rawData.title
+        model.content = rawData.content
+        model.beginAt = new Date(rawData.beginAt)
+        model.endAt = new Date(rawData.endAt)
+        
+        this.add(model)
+
+        const rawDatas = this.collection.map((task) => {
+            const deserialize = {
+                id: task.id,
+                title: task.title,
+                content: task.content,
+                beginAt: task.beginAt,
+                endAt: task.endAt
+            }
+            return deserialize
+        })
+        localStorage.setItem('__TASKS__', JSON.stringify(rawDatas))
+    }
+
+    #getNextId() {
+        if (this.collection.length > 0) {
+            return [... this.collection]
+                .sort((t1, t2) => t2.id - t1.id)[0].id
+        }
+
+        return 1
+    }
+
     #populate() {
-        let model
+        const rawData = localStorage.getItem('__TASKS__')
 
-        model = new TaskModel()
-        model.id = 1
-        model.title = "Première tâche"
-        model.content = "Contenu de la tâche"
-        model.beginAt = new Date('2025-09-01 09:00')
-        model.endAt = new Date('2025-09-01 17:00')
+        if (rawData) {
+            // Deserialize data with a map function
+            this.collection = JSON.parse(rawData)
+                .map((item) => {
+                    const model = new TaskModel()
+                    model.id = item.id
+                    model.title = item.title
+                    model.content = item.content
+                    model.beginAt = new Date(item.beginAt)
+                    model.endAt = new Date(item.endAt)
 
-        this.collection.push(model)
+                    return model
+                })
+        }
     }
 }

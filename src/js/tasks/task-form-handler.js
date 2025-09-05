@@ -1,5 +1,8 @@
 import { TemplateHandler } from "../core/template-handler"
+import { TaskCollection } from "./task-collection"
+import { TaskModel } from './task-model'
 import $ from 'jquery'
+import { TasksToDom } from "./tasks-to-dom"
 
 export class TaskFormHandler {
     #controls = new Map([
@@ -35,6 +38,7 @@ export class TaskFormHandler {
     ])
 
     #templateHandler = new TemplateHandler('form-template')
+    #collection = new TaskCollection()
 
     constructor() {}
 
@@ -74,10 +78,36 @@ export class TaskFormHandler {
         })
     }
 
+    onSubmit (modalRef) {
+        return () => {
+            const rawData = {
+                title: '',
+                content: '',
+                beginAt: new Date(),
+                endAt: new Date()
+            }
+            for (const attribute in rawData) {
+                // Get the control
+                const controlQuery = `[name="${attribute}"]`
+                const control = $(controlQuery)
+                if (attribute === 'beginAt' || attribute === 'endAt') {
+                    rawData[attribute] = new Date($(control).val())
+                } else {
+                    rawData[attribute] = $(control).val()
+                }
+            }
+            this.#collection.serializeAndPush(rawData)
+            modalRef.remove()
+
+            // Trigger a redraw
+            $('#task-dock').children().remove()
+            new TasksToDom(new TaskCollection()).build()
+        }
+    }
+
     #requiredField () {
         return (control) => {
-            const selector = `input[name="${control}"]`
-            console.log(`Gather value from ${selector}`)
+            const selector = `[name="${control}"]`
             const field = $(selector)
             const value = field.val().trim()
 

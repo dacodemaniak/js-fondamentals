@@ -11,9 +11,10 @@ export class TasksToDom {
     }
 
     build() {
-        const template = this.#templateHandler.clone()
 
         this.#taskCollection.collection.forEach((item) => {
+            const template = this.#templateHandler.clone()
+            
             template.querySelector('.card')
                 .setAttribute('id', 'id_' + item.id)
 

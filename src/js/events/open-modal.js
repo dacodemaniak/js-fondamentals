@@ -83,7 +83,7 @@ export class OpenModal {
         // Attach event to backButton
         checkButton.on(
             'click',
-            (event) => outerModal.remove()
+            this.#form.onSubmit(outerModal)
         )
 
         const checkIcon = $('<i>', {
