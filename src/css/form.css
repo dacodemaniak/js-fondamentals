@@ -8,6 +8,17 @@ form {
     width: 100%;
     padding: 2em;
     transform: translateY(-50%);
+    outline: 0;
+}
+
+form error {
+    display: block;
+    color: var(--danger);
+    font-size: .8em;
+}
+
+form error.no-display {
+    display: none;
 }
 
 form div.form-field {
@@ -18,4 +29,27 @@ form div.form-field input, form div.form-field textarea {
     border: none;
     border-bottom: solid 2px var(--primary-hsl);
     padding-bottom: 1em;
+    outline: 0;
+}
+
+.got-focus {
+    animation-name: on-focus;
+    animation-duration: .7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+@keyframes on-focus {
+    0% {
+        border-bottom: 1px solid #ccc;
+        box-shadow: 0 0 0 rgba(59, 130, 246, 0);
+    }
+    50% {
+        border-bottom: 2px solid #3b82f6;
+        box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+    }
+    100% {
+        border-bottom: 1px solid #3b82f6;
+        box-shadow: 0 1px 4px rgba(59, 130, 246, 0.2);
+    }
 }

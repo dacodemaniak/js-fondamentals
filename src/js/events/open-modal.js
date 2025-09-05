@@ -121,5 +121,9 @@ export class OpenModal {
 
         $('body').append(outerModal)
 
+        // Place les handlers
+        this.#form.focusHandler()
+        this.#form.blurHandler()
+
     }
 }
