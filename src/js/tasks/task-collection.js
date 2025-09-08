@@ -1,11 +1,15 @@
 import { Collection } from "../core/collection"
 import { TaskModel } from "./task-model"
+import { TaskService } from "./task.service"
 
 export class TaskCollection extends Collection {
+    #service = null
+
     constructor() {
         super()
         this.collection = []
         this.#populate()
+        this.#service = new TaskService()
     }
 
     /**
@@ -17,9 +21,10 @@ export class TaskCollection extends Collection {
     add(item) {
         if (item instanceof TaskModel) {
             this.collection.push(item)
+            this.#service.add(item)
             return this
         }
-        throw new Error(`Item is not TaskModel`)
+        throw new Error(`Item is not a TaskModel`)
     }
 
     /**
@@ -97,8 +102,13 @@ export class TaskCollection extends Collection {
         return 1
     }
 
-    #populate() {
-        const rawData = localStorage.getItem('__TASKS__')
+    async #populate() {
+        let rawData = localStorage.getItem('__TASKS__')
+
+        if (!rawData) {
+            // Consume endpoint
+            rawData = await this.#service.getAll()
+        }
 
         if (rawData) {
             // Deserialize data with a map function
