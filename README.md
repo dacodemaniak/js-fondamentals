@@ -4,4 +4,9 @@ Les différentes branches de ce dépôt permettent de suivre la progression d'un
 # Dépôt GIT
 
 `git clone https://github.com/dacodemaniak/js-fondamentals`
+`cd js-fondamentals`
+`npm run dev`
 
+# Backend
+`cd backend`
+`npm run dev`

@@ -1,6 +1,6 @@
 {
   "name": "js-fondamentals",
-  "version": "1.0.0",
+  "version": "1.0",
   "description": "Fondamentaux JS",
   "main": "/dist/main.js",
   "scripts": {
