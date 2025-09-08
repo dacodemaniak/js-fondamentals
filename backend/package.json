@@ -1,0 +1,33 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "NodeJS + Express simple backend",
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "dev": "nodemon main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dacodemaniak/js-fondamentals.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "Express",
+    "nodemon",
+    "layers"
+  ],
+  "author": "Aélion <jean-luc.aubert@aelion.fr>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dacodemaniak/js-fondamentals/issues"
+  },
+  "homepage": "https://github.com/dacodemaniak/js-fondamentals#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
